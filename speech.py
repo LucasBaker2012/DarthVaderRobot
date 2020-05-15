@@ -1,7 +1,8 @@
-import winsound, speech_recognition as sr
+import random, time, winsound, speech_recognition as sr
+from playsound import playsound
 
 r = sr.Recognizer()
-
+'''
 with sr.Microphone() as source:
     print('Speak Anything : ')
     audio = r.listen(source)
@@ -17,4 +18,14 @@ with sr.Microphone() as source:
             print("Sorry couldn't recognize your voice")    
     except:
         print("Sorry couldn't recognize your voice")
+'''
+breathing_cycle = 0
+while breathing_cycle < 10:
+     breathing_cycle += 1
+     trigger = random.randint(0,5)
+     if trigger == 4:
+         playsound("sounds/Breath.wav")
+         print("It works")
+         time.sleep(2)
 
+    
